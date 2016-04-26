@@ -19,7 +19,7 @@ router.route('/')
 })
 
 	.post((req, res) => {
-	//db.run will be calling this
+
 	//req.body (data object)
 		Room.create(req.body, err => {
 		if(err) {
