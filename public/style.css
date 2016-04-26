@@ -1,0 +1,21 @@
+body {
+	background-color: black;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 30px;
+}
+
+.modal {
+	color: black;
+}
+
+.btn {
+	background-color: white;
+	color: black;
+}
+
+h2 {
+	margin-top: 25px;
+	margin-bottom: 50px;
+}

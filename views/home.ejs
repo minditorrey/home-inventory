@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+	<title>Home Inventory Tracker</title>
+   
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="home.js"></script>
+  
+</head>
+<body>
+	<div class="container-fluid">
+		
+    <h1>Home Inventory Tracker</h1>
+    <h2>A nifty app to track the value of your possessions.</h2>
+    <button type="button" class="btn btn-large newItem"  data-target="#myModal">Track Stuff</button>
+
+<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+        	<div class="modal-content">
+            <!-- Modal Header -->
+            	<div class="modal-header">
+            	</div>
+            
+            <!-- Modal Body -->
+            	<div class="modal-body">
+                
+                	<form role="form">
+                  		<div class="form-group">
+                    		<label>Room ID</label>
+                    	<div class="panel panel-default">
+             				<div class="panel-body">
+             			  		<div class="form-group">
+  									<label for="sel1">Select Room:</label>
+  									<select class="form-control sel1" id="sel1">
+    									<option>1-Kitchen</option>
+    									<option>2-Dining Room</option>
+    									<option>3-Living Room</option>
+    									<option>4-Office</option>
+    									<option>5-Master Bedroom</option>
+    									<option>6-Guest Bedroom</option>
+    									<option>7-Bathrooms</option>
+    									<option>4-Garage</option>
+  									</select>
+								</div>
+                  			
+                  				<div class="form-group">
+                    				<label>Description</label>
+                    				<input type="name" class="form-control" id="description"/>
+                  				</div>
+                  				<div class="form-group">
+  									<label for="sel1">Select Category:</label>
+  									<select class="form-control" id="sel2">
+    									<option>100-Furniture</option>
+    									<option>200-Appliances</option>
+    									<option>300-Electronics</option>
+    									<option>400-Jewelry</option>
+    									<option>500-Antiques</option>
+    									<option>600-Evryday Items</option>
+    									<option>700-Other Valuables</option>
+  									</select>
+								</div>
+                  			<div class="form-group">
+                    			<label>Item Value</label>
+                      			<input type="totalPoints" class="form-control" id="itemValue"/>
+                  			</div>
+                		</form>    
+            		</div><!-- Modal Body-->
+            
+            		<!-- Modal Footer -->
+            		<div class="modal-footer">
+                	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                	<button type="button" class="btn btn-primary" id="submitNewItem">Track It</button>
+            		</div>
+        		</div>
+    		</div>
+		</div>
+	</div>
+</div>
+</div>
+	<table class="table">
+    	<thead>
+    		<tr>
+    			<th>Item ID</th>
+    			<th>Item Description</th>
+    			<th>Item Category</th>
+    			<th>Room ID</th>
+    			<th>Item Value</th>
+    			<th>Room Value</th>
+    			<th>Category Value</th>
+    			<th>Total Value</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		
+
+    		<% for(var i = 0; i < items.length; i++) { %>
+				<tr>
+    				<td><%= items[i].itemID %></td>
+    				<td><%= items[i].description %></td>
+    				<td><%= items[i].category %></td>
+    				<td><%= items[i].roomID %></td>
+    				<td><%= items[i].itemValue %></td>
+    		
+    				<td> <%= items[i].itemValue %> </td> 
+    				<td> <%= items[i].itemValue %> </td>
+    				<td> <%= items[i].itemValue %> </td>
+    				<td><button class="btn btn-sm editIt" id="edit">Edit Item</button></td>
+                    <td><button class="btn btn-sm removeIt" id="remove">Remove Item</button></td>
+    			</tr>
+    		<% } %>
+    				
+
+    		
+    	</tbody>
+    </table>
+	
+
+	</div> <!-- container fluid -->
+</body>
+</html>

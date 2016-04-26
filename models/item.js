@@ -22,7 +22,6 @@ exports.create = function(item, cb) {
 		return cb('Please fill out all fields.')
 	}
 
-	console.log('item:', item);
 
 
 	db.query("INSERT INTO items SET ?", item, cb);

@@ -22,11 +22,14 @@ router.route('/')
 	.post((req, res) => {
 	//db.run will be calling this
 	// req.body (data object)
-		Item.create(req.body, err => {
+	console.log('POST');
+		console.log(req.body);
+		Item.create(req.body, (err, result) => {
 			if(err) {
 				console.log(err)
 				return res.status(400).send(err);
 			}
+			console.log('result', result);
 			res.send();
 		});
 	});
